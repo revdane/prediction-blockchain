@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import { AppNavigator } from './router/AppNavigator';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import store from './store';
+import Mixpanel from 'react-native-mixpanel';
+import { LOCAL_CONFIG } from '../config';
 
 EStyleSheet.build({
   $primaryColor: '#21CE99',
@@ -40,6 +42,15 @@ export default class App extends Component {
     }
     Text.defaultProps.stype = {
       fontFamily: 'Roboto-Regular'
+    };
+
+    // Initialize Mixpanel
+    Mixpanel.sharedInstanceWithToken(LOCAL_CONFIG.MIXPANEL_TOKEN);
+    if (Platform.OS === 'android') {
+      // Send push token
+      Mixpanel.setPushRegistrationId("GCM/FCM push token");
+    } else if (Platform.OS === 'ios') {
+      // Send APNS token
     }
   }
 

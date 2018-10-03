@@ -12,6 +12,10 @@ export const APP_FAQ = `${App.server_url}.freshdesk.com/support/home`;
 export const APP_PRIVACY_POLICY = `${App.server_url}/platform/privacy-policy`;
 export const APP_TERMS_SERVICE = `${App.server_url}/platform/terms-of-use`;
 export const APP_CONTACT = `${App.server_url}/platform/contact`;
+export const MIXPANEL_TOKEN = '873fa4dd540c036fc53d3b434f457b3b';
+export const GCM_API_KEY = 'AIzaSyDbyECkCTI8bHwS5p40mYe-ZvkXWoLWERQ';
+export const GCM_PROJECT_NUMBER = '592550638702';
+
 
 export const APP_STORE_LINK = Platform.OS === 'ios' ?
   'itms-apps://itunes.apple.com/au/app/${app_name}/${appid}?mt=8'
@@ -29,4 +33,5 @@ export const LOCAL_CONFIG = {
   APP_PRIVACY_POLICY,
   APP_TERMS_SERVICE,
   APP_CONTACT,
+  MIXPANEL_TOKEN
 };
